@@ -60,7 +60,7 @@
     "href": "presentation.html#capture-recapture-inference",
     "title": "Wild Stats for Population Ecology",
     "section": "Capture-Recapture Inference",
-    "text": "Capture-Recapture Inference\n\n\nFigure 5: Schematic of capture-recpature strategy: each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, Ecology: the experimental analysis of distribution and abundance, 6 ed., Pearson: London (2009).\n\n\n\nEstimate for population size\n\n\n\\hat{N} = \\frac{m \\cdot K}{r}"
+    "text": "Capture-Recapture Inference\n\n\nFigure 5: Schematic of a capture-recpature strategy. Each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, Ecology: the experimental analysis of distribution and abundance, 6 ed., Pearson: London (2009).\n\n\n\nEstimate for population size\n\n\n\\hat{N} = \\frac{m \\cdot K}{r}"
   },
   {
     "objectID": "presentation.html#try-it",
