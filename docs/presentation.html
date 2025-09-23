@@ -101,6 +101,22 @@
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-13e009b329e27400e3a9f3412aa43d00.css">
   <link rel="stylesheet" href="resources/fonts.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -209,8 +225,8 @@
   <p class="institute">University of Dundee</p>
 </section>
 <section>
-<section id="section" class="title-slide slide level1 blue center">
-<h1>?</h1>
+<section id="the-problem" class="title-slide slide level1 blue center">
+<h1>The Problem</h1>
 
 </section>
 <section id="question" class="slide level2 center">
@@ -317,7 +333,7 @@ Figure&nbsp;3: BBC Bitesize, <em>Collecting data - quadrats</em>.
 <p><strong>Estimate the number of grass plants found in the whole area in <a href="#/fig-quadrats" class="quarto-xref">Figure&nbsp;3</a></strong></p>
 </div>
 <div class="callout-content">
-<p><span class="math display">\[\text{Total grass plants found in sample} \times \frac{\text{Total area}\;(m^2)}{\text{Total area sampled}\;(m^2)}\]</span></p>
+<p><span class="math display">\text{Total grass plants found in sample} \times \frac{\text{Total area}\;(m^2)}{\text{Total area sampled}\;(m^2)}</span></p>
 </div>
 </div>
 </div>
@@ -331,7 +347,7 @@ Figure&nbsp;3: BBC Bitesize, <em>Collecting data - quadrats</em>.
 </section>
 <section id="sampling-subject-that-move" class="slide level2 smaller">
 <h2>Sampling subject that move</h2>
-<p>Want to estimate <span class="math inline">\(N\)</span>, the number of animals in a population. Strategy: use a two-sample capture-recapture method.<sup>1</sup></p>
+<p>Want to estimate <span class="math inline">N</span>, the number of animals in a population. Strategy: use a two-sample capture-recapture method.<sup>1</sup></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div id="fig-puffin" class="quarto-float quarto-figure quarto-figure-center" alt="Atlantic puffin.">
@@ -346,9 +362,9 @@ Figure&nbsp;4: R. Bartz: Puffin, <em>Fratercula arctica</em>, at Látrabjarg, Ic
 </div>
 </div><div class="column" style="width:60%;">
 <ul>
-<li>Sampling 1: capture, mark, and release <span class="math inline">\(m\)</span> animals.</li>
-<li>Sampling 2: recapture <span class="math inline">\(K\)</span> animals and count marked animals (<span class="math inline">\(r\)</span> recaptures).</li>
-<li>Proportion of marked individuals recaptured equals proportion of total animals marked: <span class="math display">\[ \frac{r}{K} = \frac{m}{N} \,.\]</span></li>
+<li>Sampling 1: capture, mark, and release <span class="math inline">m</span> animals.</li>
+<li>Sampling 2: recapture <span class="math inline">K</span> animals and count marked animals (<span class="math inline">r</span> recaptures).</li>
+<li>Proportion of marked individuals recaptured equals proportion of total animals marked: <span class="math display"> \frac{r}{K} = \frac{m}{N} \,.</span></li>
 </ul>
 </div></div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Also known as the Lincoln–Peterson method.</p></li></ol></aside></section>
@@ -363,21 +379,21 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
 <p><strong>Estimate for population size</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="math display">\[\hat{N} = \frac{m \cdot K}{r}\]</span></p>
+<p><span class="math display">\hat{N} = \frac{m \cdot K}{r}</span></p>
 </div>
 </div>
 </div>
 </section>
 <section id="try-it" class="slide level2 smaller">
 <h2><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path></svg> Try it!</h2>
-<p>Work in small groups to apply the capture-recapture method to estimate <span class="math inline">\(N\)</span>.</p>
+<p>Work in small groups to apply the capture-recapture method to estimate <span class="math inline">N</span>.</p>
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li>“Capture” a number, <span class="math inline">\(m\)</span>, of puffins. Mark these puffins and “release” them back into the environment.</li>
+<li>“Capture” a number, <span class="math inline">m</span>, of puffins. Mark these puffins and “release” them back into the environment.</li>
 <li>Make sure the puffins mix in the environment!</li>
-<li>“Capture” number, <span class="math inline">\(K\)</span>, of puffins. Count the number of recaptures, <span class="math inline">\(r\)</span>.</li>
-<li>Use the formula to calculate <span class="math inline">\(\hat{N}\)</span>.</li>
+<li>“Capture” number, <span class="math inline">K</span>, of puffins. Count the number of recaptures, <span class="math inline">r</span>.</li>
+<li>Use the formula to calculate <span class="math inline">\hat{N}</span>.</li>
 </ul>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/puffin-vector-set-cute-cartoon-puffin-illustration_186686-802-2390816394.jpg" style="width:100.0%" alt="Cartoon puffins."></p>
@@ -388,7 +404,7 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
 <p><strong>Estimate for population size</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="math display">\[\hat{N} = \frac{m \cdot K}{r}\]</span></p>
+<p><span class="math display">\hat{N} = \frac{m \cdot K}{r}</span></p>
 </div>
 </div>
 </div>
@@ -407,10 +423,10 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
 <aside><ol class="aside-footnotes"><li id="fn2"><p>This includes assuming that the mark is not a target for predators!</p></li></ol></aside></section>
 <section id="robustness" class="slide level2 center">
 <h2>Robustness</h2>
-<p>How good is the esimtate? How does it depend on <span class="math inline">\(m\)</span> and <span class="math inline">\(K\)</span>?</p>
+<p>How good is the esimtate? How does it depend on <span class="math inline">m</span> and <span class="math inline">K</span>?</p>
 </section>
-<section id="simulations" class="slide level2">
-<h2>Simulations</h2>
+<section id="statistics-by-simulations" class="slide level2">
+<h2>Statistics by simulations</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>#| standalone: true</span>
 <span id="cb1-2"><a></a>#| viewerHeight: 620</span>
 <span id="cb1-3"><a></a></span>
@@ -425,14 +441,14 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
 <span id="cb1-12"><a></a>    sliderInput("m", "Marked in first sample m", min = 1, max = 200, value = 50, step = 1),</span>
 <span id="cb1-13"><a></a>    sliderInput("K", "Second sample size K", min = 1, max = 200, value = 60, step = 1),</span>
 <span id="cb1-14"><a></a>    checkboxInput("logx", "Log x-axis", value = FALSE),</span>
-<span id="cb1-15"><a></a>    selectInput("est", "Estimator", c("Lincoln-Peterson", "Chapman")),</span>
-<span id="cb1-16"><a></a>    numericInput("reps", "Replicates", value = 2000, min = 100, step = 100),</span>
+<span id="cb1-15"><a></a>    selectInput("est", "Estimator", c("Lincoln–Petersen" = "LP", "Chapman" = "CH")),</span>
+<span id="cb1-16"><a></a>    numericInput("reps", "Replicates", value = 1000, min = 100, step = 100),</span>
 <span id="cb1-17"><a></a>    actionButton("resim", "Re-run simulation"),</span>
-<span id="cb1-18"><a></a>    helpText("Runs capture–recapture simulations replicate number of times."),</span>
+<span id="cb1-18"><a></a>    helpText("Runs capture–recapture simulations replicate number of times.")</span>
 <span id="cb1-19"><a></a>  ),</span>
 <span id="cb1-20"><a></a>  navset_card_underline(</span>
 <span id="cb1-21"><a></a>    nav_panel("Histogram", plotOutput("hist")),</span>
-<span id="cb1-22"><a></a>    nav_panel("Summary", withMathJax(tableOutput("summary")))</span>
+<span id="cb1-22"><a></a>    nav_panel("Summary", tableOutput("summary"))</span>
 <span id="cb1-23"><a></a>  )</span>
 <span id="cb1-24"><a></a>)</span>
 <span id="cb1-25"><a></a></span>
@@ -462,100 +478,102 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
 <span id="cb1-49"><a></a>    #   rvec[i] &lt;- sum(idx &lt;= m)</span>
 <span id="cb1-50"><a></a>    # }</span>
 <span id="cb1-51"><a></a>    rvec &lt;- rhyper(nn = reps, m = m, n = N - m, k = K)</span>
-<span id="cb1-52"><a></a>    # nhat_rv(ifelse(rvec &gt; 0L, (m * K) / rvec, NA_real_))</span>
-<span id="cb1-53"><a></a>    nh &lt;- if (input$est == "Lincoln--Peterson") ifelse(rvec &gt; 0L, (m * K) / rvec, NA_real_)</span>
-<span id="cb1-54"><a></a>      else ((m + 1) * (K + 1)) / (rvec + 1) - 1</span>
-<span id="cb1-55"><a></a>    nhat_rv(nh)</span>
-<span id="cb1-56"><a></a>    invisible()</span>
-<span id="cb1-57"><a></a>  }</span>
-<span id="cb1-58"><a></a></span>
-<span id="cb1-59"><a></a>  observeEvent(input$resim, { recompute() })</span>
-<span id="cb1-60"><a></a>  observeEvent(list(input$N, input$m, input$K), { recompute() }, ignoreInit = TRUE)</span>
-<span id="cb1-61"><a></a>  # initial run</span>
-<span id="cb1-62"><a></a>  observe({ recompute() })</span>
-<span id="cb1-63"><a></a></span>
-<span id="cb1-64"><a></a>  output$hist &lt;- renderPlot({</span>
-<span id="cb1-65"><a></a>    nh &lt;- nhat_rv()</span>
-<span id="cb1-66"><a></a>    N &lt;- as.integer(input$N)</span>
-<span id="cb1-67"><a></a>    vals &lt;- nh[is.finite(nh)]</span>
-<span id="cb1-68"><a></a>    if (!length(vals)) {</span>
-<span id="cb1-69"><a></a>      plot.new(); title("No finite estimates to plot (all r = 0)")</span>
-<span id="cb1-70"><a></a>      return(invisible())</span>
-<span id="cb1-71"><a></a>    }</span>
-<span id="cb1-72"><a></a>    n &lt;- length(vals)</span>
-<span id="cb1-73"><a></a>    # Choose bins by a non data-driven rule of thumb (Rice rule) </span>
-<span id="cb1-74"><a></a>    nb &lt;- max(min(ceiling(2 * (n)^(1/3)), 200L), 5L) </span>
-<span id="cb1-75"><a></a></span>
-<span id="cb1-76"><a></a>    p &lt;- ggplot(data.frame(nhat = vals), aes(x = nhat)) +</span>
-<span id="cb1-77"><a></a>      geom_histogram(bins = nb, color = "white", fill = "#4365e2") +</span>
-<span id="cb1-78"><a></a>      scale_x_continuous(limits = c(0, 3 * N)) +</span>
-<span id="cb1-79"><a></a>      geom_vline(xintercept = N, linetype = "dashed", linewidth = 1, color = "#ff6264") +</span>
-<span id="cb1-80"><a></a>      labs(title = sprintf("Distribution of estimated population size (%d replicates)", n),</span>
-<span id="cb1-81"><a></a>           x = expression(hat(N)), y = "Count") +</span>
-<span id="cb1-82"><a></a>      theme_classic(base_size = 16)</span>
-<span id="cb1-83"><a></a>    if (input$logx) {</span>
-<span id="cb1-84"><a></a>      p &lt;- p + scale_x_log10()</span>
-<span id="cb1-85"><a></a>    } else {</span>
-<span id="cb1-86"><a></a>      p &lt;- p + coord_cartesian(xlim = c(0, 4 * N))</span>
-<span id="cb1-87"><a></a>    }</span>
-<span id="cb1-88"><a></a>    p</span>
-<span id="cb1-89"><a></a>  })</span>
-<span id="cb1-90"><a></a></span>
-<span id="cb1-91"><a></a>output$summary &lt;- renderTable({</span>
-<span id="cb1-92"><a></a>  nh &lt;- nhat_rv()</span>
-<span id="cb1-93"><a></a>  N  &lt;- as.integer(input$N)</span>
-<span id="cb1-94"><a></a></span>
-<span id="cb1-95"><a></a>  finite_mask &lt;- is.finite(nh)</span>
-<span id="cb1-96"><a></a>  x &lt;- nh[finite_mask]</span>
-<span id="cb1-97"><a></a>  n_eff &lt;- length(x)</span>
-<span id="cb1-98"><a></a>  na_rate &lt;- mean(is.na(nh))</span>
-<span id="cb1-99"><a></a></span>
-<span id="cb1-100"><a></a>  mean_x &lt;- if (n_eff) mean(x) else NA_real_</span>
-<span id="cb1-101"><a></a>  med_x  &lt;- if (n_eff) median(x) else NA_real_</span>
-<span id="cb1-102"><a></a>  sd_x   &lt;- if (n_eff) sd(x) else NA_real_</span>
-<span id="cb1-103"><a></a>  iqr_x  &lt;- if (n_eff) IQR(x) else NA_real_</span>
-<span id="cb1-104"><a></a>  min_x  &lt;- if (n_eff) min(x) else NA_real_</span>
-<span id="cb1-105"><a></a>  max_x  &lt;- if (n_eff) max(x) else NA_real_</span>
-<span id="cb1-106"><a></a></span>
-<span id="cb1-107"><a></a>  bias      &lt;- if (n_eff) mean_x - N else NA_real_</span>
-<span id="cb1-108"><a></a>  rel_bias  &lt;- if (n_eff &amp;&amp; N != 0) bias / N else NA_real_</span>
-<span id="cb1-109"><a></a>  rmse      &lt;- if (n_eff) sqrt(mean((x - N)^2)) else NA_real_</span>
-<span id="cb1-110"><a></a></span>
-<span id="cb1-111"><a></a>  nhat_sym &lt;- "N-hat"</span>
+<span id="cb1-52"><a></a>    nh &lt;- if (identical(input$est, "LP")) {</span>
+<span id="cb1-53"><a></a>      ifelse(rvec &gt; 0L, (m * K) / rvec, NA_real_)</span>
+<span id="cb1-54"><a></a>    } else {</span>
+<span id="cb1-55"><a></a>      ((m + 1) * (K + 1)) / (rvec + 1) - 1</span>
+<span id="cb1-56"><a></a>    }</span>
+<span id="cb1-57"><a></a>    nhat_rv(nh)</span>
+<span id="cb1-58"><a></a>    invisible()</span>
+<span id="cb1-59"><a></a>  }</span>
+<span id="cb1-60"><a></a></span>
+<span id="cb1-61"><a></a>  observeEvent(input$resim, { recompute() })</span>
+<span id="cb1-62"><a></a>  observeEvent(list(input$N, input$m, input$K), { recompute() }, ignoreInit = TRUE)</span>
+<span id="cb1-63"><a></a>  # initial run</span>
+<span id="cb1-64"><a></a>  observe({ recompute() })</span>
+<span id="cb1-65"><a></a></span>
+<span id="cb1-66"><a></a>  output$hist &lt;- renderPlot({</span>
+<span id="cb1-67"><a></a>    nh &lt;- nhat_rv()</span>
+<span id="cb1-68"><a></a>    N &lt;- as.integer(input$N)</span>
+<span id="cb1-69"><a></a>    vals &lt;- nh[is.finite(nh)]</span>
+<span id="cb1-70"><a></a>    if (!length(vals)) {</span>
+<span id="cb1-71"><a></a>      plot.new(); title("No finite estimates to plot (all r = 0)")</span>
+<span id="cb1-72"><a></a>      return(invisible())</span>
+<span id="cb1-73"><a></a>    }</span>
+<span id="cb1-74"><a></a>    n &lt;- length(vals)</span>
+<span id="cb1-75"><a></a>    # Choose bins by a non data-driven rule of thumb (Rice rule) </span>
+<span id="cb1-76"><a></a>    nb &lt;- max(min(ceiling(2 * (n)^(1/3)), 200L), 5L) </span>
+<span id="cb1-77"><a></a></span>
+<span id="cb1-78"><a></a>    p &lt;- ggplot(data.frame(nhat = vals), aes(x = nhat)) +</span>
+<span id="cb1-79"><a></a>      geom_histogram(bins = nb, color = "white", fill = "#4365e2") +</span>
+<span id="cb1-80"><a></a>      scale_x_continuous(limits = c(0, 3 * N)) +</span>
+<span id="cb1-81"><a></a>      geom_vline(xintercept = N, linetype = "dashed", linewidth = 1, color = "#ff6264") +</span>
+<span id="cb1-82"><a></a>      labs(title = sprintf("Distribution of estimated population size (%d replicates)", n),</span>
+<span id="cb1-83"><a></a>           x = expression(hat(N)), y = "Count") +</span>
+<span id="cb1-84"><a></a>      theme_classic(base_size = 16)</span>
+<span id="cb1-85"><a></a>    if (input$logx) {</span>
+<span id="cb1-86"><a></a>      p &lt;- p + scale_x_log10()</span>
+<span id="cb1-87"><a></a>    } else {</span>
+<span id="cb1-88"><a></a>      p &lt;- p + coord_cartesian(xlim = c(0, 4 * N))</span>
+<span id="cb1-89"><a></a>    }</span>
+<span id="cb1-90"><a></a>    p</span>
+<span id="cb1-91"><a></a>  })</span>
+<span id="cb1-92"><a></a></span>
+<span id="cb1-93"><a></a>output$summary &lt;- renderTable({</span>
+<span id="cb1-94"><a></a>  nh &lt;- nhat_rv()</span>
+<span id="cb1-95"><a></a>  N  &lt;- as.integer(input$N)</span>
+<span id="cb1-96"><a></a></span>
+<span id="cb1-97"><a></a>  finite_mask &lt;- is.finite(nh)</span>
+<span id="cb1-98"><a></a>  x &lt;- nh[finite_mask]</span>
+<span id="cb1-99"><a></a>  n_eff &lt;- length(x)</span>
+<span id="cb1-100"><a></a>  na_rate &lt;- mean(is.na(nh))</span>
+<span id="cb1-101"><a></a></span>
+<span id="cb1-102"><a></a>  mean_x &lt;- if (n_eff) mean(x) else NA_real_</span>
+<span id="cb1-103"><a></a>  med_x  &lt;- if (n_eff) median(x) else NA_real_</span>
+<span id="cb1-104"><a></a>  sd_x   &lt;- if (n_eff) sd(x) else NA_real_</span>
+<span id="cb1-105"><a></a>  iqr_x  &lt;- if (n_eff) IQR(x) else NA_real_</span>
+<span id="cb1-106"><a></a>  min_x  &lt;- if (n_eff) min(x) else NA_real_</span>
+<span id="cb1-107"><a></a>  max_x  &lt;- if (n_eff) max(x) else NA_real_</span>
+<span id="cb1-108"><a></a></span>
+<span id="cb1-109"><a></a>  bias      &lt;- if (n_eff) mean_x - N else NA_real_</span>
+<span id="cb1-110"><a></a>  rel_bias  &lt;- if (n_eff &amp;&amp; N != 0) bias / N else NA_real_</span>
+<span id="cb1-111"><a></a>  rmse      &lt;- if (n_eff) sqrt(mean((x - N)^2)) else NA_real_</span>
 <span id="cb1-112"><a></a></span>
-<span id="cb1-113"><a></a>  vals &lt;- c(</span>
-<span id="cb1-114"><a></a>    N,</span>
-<span id="cb1-115"><a></a>    mean_x,</span>
-<span id="cb1-116"><a></a>    med_x,</span>
-<span id="cb1-117"><a></a>    sd_x,</span>
-<span id="cb1-118"><a></a>    iqr_x,</span>
-<span id="cb1-119"><a></a>    min_x,</span>
-<span id="cb1-120"><a></a>    max_x,</span>
-<span id="cb1-121"><a></a>    bias,</span>
-<span id="cb1-122"><a></a>    rel_bias,</span>
-<span id="cb1-123"><a></a>    rmse,</span>
-<span id="cb1-124"><a></a>    na_rate</span>
-<span id="cb1-125"><a></a>  )</span>
-<span id="cb1-126"><a></a></span>
-<span id="cb1-127"><a></a>  nms &lt;- c(</span>
-<span id="cb1-128"><a></a>    "True N",</span>
-<span id="cb1-129"><a></a>    paste0("Mean( ", nhat_sym, " )"),</span>
-<span id="cb1-130"><a></a>    paste0("Median( ", nhat_sym, " )"),</span>
-<span id="cb1-131"><a></a>    paste0("SD( ", nhat_sym, " )"),</span>
-<span id="cb1-132"><a></a>    paste0("IQR( ", nhat_sym, " )"),</span>
-<span id="cb1-133"><a></a>    paste0("Min( ", nhat_sym, " )"),</span>
-<span id="cb1-134"><a></a>    paste0("Max( ", nhat_sym, " )"),</span>
-<span id="cb1-135"><a></a>    paste0("Bias = Mean( ", nhat_sym, " ) - N"),</span>
-<span id="cb1-136"><a></a>    paste0("Relative Bias = Bias / N"),</span>
-<span id="cb1-137"><a></a>    paste0("RMSE = sqrt( E[( ", nhat_sym, " - N )^2] )"),</span>
-<span id="cb1-138"><a></a>    "Mean(is.na(nh))"</span>
-<span id="cb1-139"><a></a>  )</span>
-<span id="cb1-140"><a></a></span>
-<span id="cb1-141"><a></a>  data.frame(Statistic = nms, Value = as.numeric(vals), check.names = FALSE)</span>
-<span id="cb1-142"><a></a>}, rownames = FALSE, colnames = TRUE)</span>
-<span id="cb1-143"><a></a>}</span>
-<span id="cb1-144"><a></a></span>
-<span id="cb1-145"><a></a>shinyApp(ui, server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-113"><a></a>  nhat_sym &lt;- "N-hat"  # Unicode N\u0302</span>
+<span id="cb1-114"><a></a></span>
+<span id="cb1-115"><a></a>  vals &lt;- c(</span>
+<span id="cb1-116"><a></a>    N,</span>
+<span id="cb1-117"><a></a>    mean_x,</span>
+<span id="cb1-118"><a></a>    med_x,</span>
+<span id="cb1-119"><a></a>    sd_x,</span>
+<span id="cb1-120"><a></a>    iqr_x,</span>
+<span id="cb1-121"><a></a>    min_x,</span>
+<span id="cb1-122"><a></a>    max_x,</span>
+<span id="cb1-123"><a></a>    bias,</span>
+<span id="cb1-124"><a></a>    rel_bias,</span>
+<span id="cb1-125"><a></a>    rmse,</span>
+<span id="cb1-126"><a></a>    na_rate</span>
+<span id="cb1-127"><a></a>  )</span>
+<span id="cb1-128"><a></a></span>
+<span id="cb1-129"><a></a>  nms &lt;- c(</span>
+<span id="cb1-130"><a></a>    "True N",</span>
+<span id="cb1-131"><a></a>    paste0("Mean( ", nhat_sym, " )"),</span>
+<span id="cb1-132"><a></a>    paste0("Median( ", nhat_sym, " )"),</span>
+<span id="cb1-133"><a></a>    paste0("SD( ", nhat_sym, " )"),</span>
+<span id="cb1-134"><a></a>    paste0("IQR( ", nhat_sym, " )"),</span>
+<span id="cb1-135"><a></a>    paste0("Min( ", nhat_sym, " )"),</span>
+<span id="cb1-136"><a></a>    paste0("Max( ", nhat_sym, " )"),</span>
+<span id="cb1-137"><a></a>    paste0("Bias = Mean( ", nhat_sym, " ) - N"),</span>
+<span id="cb1-138"><a></a>    paste0("Relative Bias = Bias / N"),</span>
+<span id="cb1-139"><a></a>    paste0("RMSE = sqrt( E[( ", nhat_sym, " - N )^2] )"),</span>
+<span id="cb1-140"><a></a>    "Mean( is.na(nh) )"</span>
+<span id="cb1-141"><a></a>  )</span>
+<span id="cb1-142"><a></a></span>
+<span id="cb1-143"><a></a>  data.frame(Statistic = nms, Value = as.numeric(vals), check.names = FALSE)</span>
+<span id="cb1-144"><a></a>}, rownames = FALSE, colnames = TRUE)</span>
+<span id="cb1-145"><a></a>}</span>
+<span id="cb1-146"><a></a></span>
+<span id="cb1-147"><a></a>shinyApp(ui, server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="closing" class="title-slide slide level1 blue center">
@@ -583,7 +601,7 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
 <h2>Thanks for listening</h2>
 <p>Enjoy the rest of your day at the University of Dundee!</p>
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section" class="slide level2 center">
 <h2></h2>
 
 
@@ -615,7 +633,6 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
   <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="site_libs/revealjs/plugin/search/search.js"></script>
   <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -783,27 +800,9 @@ Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents o
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealTextResizer, QuartoSupport,
 
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom

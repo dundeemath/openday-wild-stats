@@ -15,7 +15,7 @@ library(ggimage)
 ```
 
 
-# ? {.blue}
+# The Problem {.blue}
 
 ## Question: {.center}
 How do we determine the size of a population?
@@ -180,7 +180,7 @@ What assumptions does capture-recapture make?
 ## Robustness {.center}
 How good is the esimtate? How does it depend on $m$ and $K$?
 
-## Simulations
+## Statistics by simulations
 
 ```{shinylive-r}
 #| standalone: true
@@ -197,14 +197,14 @@ ui <- page_sidebar(
     sliderInput("m", "Marked in first sample m", min = 1, max = 200, value = 50, step = 1),
     sliderInput("K", "Second sample size K", min = 1, max = 200, value = 60, step = 1),
     checkboxInput("logx", "Log x-axis", value = FALSE),
-    selectInput("est", "Estimator", c("Lincoln-Peterson", "Chapman")),
-    numericInput("reps", "Replicates", value = 2000, min = 100, step = 100),
+    selectInput("est", "Estimator", c("Lincoln–Petersen" = "LP", "Chapman" = "CH")),
+    numericInput("reps", "Replicates", value = 1000, min = 100, step = 100),
     actionButton("resim", "Re-run simulation"),
-    helpText("Runs capture–recapture simulations replicate number of times."),
+    helpText("Runs capture–recapture simulations replicate number of times.")
   ),
   navset_card_underline(
     nav_panel("Histogram", plotOutput("hist")),
-    nav_panel("Summary", withMathJax(tableOutput("summary")))
+    nav_panel("Summary", tableOutput("summary"))
   )
 )
 
@@ -234,9 +234,11 @@ server <- function(input, output, session) {
     #   rvec[i] <- sum(idx <= m)
     # }
     rvec <- rhyper(nn = reps, m = m, n = N - m, k = K)
-    # nhat_rv(ifelse(rvec > 0L, (m * K) / rvec, NA_real_))
-    nh <- if (input$est == "Lincoln--Peterson") ifelse(rvec > 0L, (m * K) / rvec, NA_real_)
-      else ((m + 1) * (K + 1)) / (rvec + 1) - 1
+    nh <- if (identical(input$est, "LP")) {
+      ifelse(rvec > 0L, (m * K) / rvec, NA_real_)
+    } else {
+      ((m + 1) * (K + 1)) / (rvec + 1) - 1
+    }
     nhat_rv(nh)
     invisible()
   }
@@ -293,7 +295,7 @@ output$summary <- renderTable({
   rel_bias  <- if (n_eff && N != 0) bias / N else NA_real_
   rmse      <- if (n_eff) sqrt(mean((x - N)^2)) else NA_real_
 
-  nhat_sym <- "N-hat"
+  nhat_sym <- "N-hat"  # Unicode N\u0302
 
   vals <- c(
     N,
@@ -320,7 +322,7 @@ output$summary <- renderTable({
     paste0("Bias = Mean( ", nhat_sym, " ) - N"),
     paste0("Relative Bias = Bias / N"),
     paste0("RMSE = sqrt( E[( ", nhat_sym, " - N )^2] )"),
-    "Mean(is.na(nh))"
+    "Mean( is.na(nh) )"
   )
 
   data.frame(Statistic = nms, Value = as.numeric(vals), check.names = FALSE)

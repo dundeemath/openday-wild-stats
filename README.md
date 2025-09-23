@@ -5,5 +5,3 @@ Presentation given as part of Maths Week Scotland 2025. Highlight how Mathematic
 # Open Day with Mathematics - Wild Stats Activity
 
 Highlight how Mathematics at Dundee emphasises experiential learning through an activity that demonstrates statistical ecology for estimating population sizes. 
-
-
