@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<meta name="shinylive:serviceworker_dir" content=".">
+<script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/run-python-blocks.js" type="module"></script>
+<link href="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/shinylive.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <title>Experiential Learning in Mathematics – Wild Stats for Population Ecology</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-13e009b329e27400e3a9f3412aa43d00.css">
+  <link rel="stylesheet" href="resources/fonts.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="title-page center">
+  <img class="logo" src="resources/rev_logo.png" alt="University of Dundee Logo">
+  <br>
+  <h1 class="title">Wild Stats for Population Ecology</h1>
+  <p class="subtitle">or: How to Count What Won’t Sit Still</p>
+  <br>
+  <p class="institute">University of Dundee</p>
+</section>
+<section>
+<section id="section" class="title-slide slide level1 blue center">
+<h1>?</h1>
+
+</section>
+<section id="question" class="slide level2 center">
+<h2>Question:</h2>
+<p>How do we determine the size of a population?</p>
+</section>
+<section id="census" class="slide level2">
+<h2>Census</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>A <em>census</em> counts every member of population.</li>
+<li>For wildlife, all members must be present simultaneously in terrain where concealment is impossible (think: barrenground caribou on open tundra).</li>
+<li>Counting every member of a population is not always possible!</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="fig-census" class="quarto-float quarto-figure quarto-figure-center" alt="Chalkboard with the word Statistics and all of statistics.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-census-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/_131089124_tweakedscotland_pop_change_local_authorities-nc.png.webp" style="width:80.0%" alt="Chalkboard with the word Statistics and all of statistics.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-census-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: BBC News, <em>Census: Scotland’s population grew to record high</em> (2023-09-14).
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="population-estimation" class="slide level2 center">
+<h2>Population estimation</h2>
+<p>In majority of cases, the size of a plant or animal population must be estimated from a sample. We <em>infer</em> the population size using statistics.</p>
+</section></section>
+<section>
+<section id="aside" class="title-slide slide level1 aside center">
+<h1>Aside</h1>
+
+</section>
+<section id="what-is-statistics" class="slide level2 mySegue center aside">
+<h2>What is <em>Statistics</em>?</h2>
+<p>Statistics is the science of understanding <strong>uncertainty</strong> and <strong>natural variation</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/statistics-review.jpg" style="width:100.0%" alt="Chalkboard with the word Statistics and all of statistics."></p>
+</div><div class="column" style="width:50%;">
+<blockquote>
+<p>Statistics is a collection of procedures and principles for gaining and analyzing information to educate people and help them make better decisions when faced with uncertainty. (Utts, 2014)</p>
+</blockquote>
+</div></div>
+</section>
+<section id="statistical-inference" class="slide level2 aside">
+<h2>Statistical inference</h2>
+<ul>
+<li>Often we are interested in estimating a characteristic of a population based on a small number of samples.</li>
+<li>When we estimate a population characteristic using an inferential procedure, we can sometimes make errors!</li>
+</ul>
+<div class="quarto-layout-panel" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" data-reveal="true" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="cell-output-display">
+<div id="fig-flowchart" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-flowchart">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '28px'}}}%%
+
+flowchart LR
+  A(("Data")) &amp; B(("Models")) --&gt; C(("Inference")) ==&gt; D(("Population"))
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: We use data and (statistical) models to make inferences about a population.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="estimating-populations" class="title-slide slide level1 blue center">
+<h1>Estimating populations</h1>
+
+</section>
+<section id="sampling-subjects-that-sit-still" class="slide level2 smaller">
+<h2>Sampling subjects that ‘sit still’</h2>
+
+<img data-src="images/quadrats.png" style="width:80.0%" alt="Quadrats in action." class="r-stretch quarto-figure-center" id="fig-quadrats"><p class="caption">
+Figure&nbsp;3: BBC Bitesize, <em>Collecting data - quadrats</em>.
+</p><div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Types of sampling</a></li><li><a href="#tabset-1-2">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>When distribution is homogeneous: random sampling without replacement.</li>
+<li>When distribution is inhomogeneous: stratefied sampling along “transects”.</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Estimate the number of grass plants found in the whole area in <a href="#/fig-quadrats" class="quarto-xref">Figure&nbsp;3</a></strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[\text{Total grass plants found in sample} \times \frac{\text{Total area}\;(m^2)}{\text{Total area sampled}\;(m^2)}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="discussion" class="slide level2 center">
+<h2>Discussion</h2>
+<p>But what to do if <strong>subjects move</strong>?</p>
+</section>
+<section id="sampling-subject-that-move" class="slide level2 smaller">
+<h2>Sampling subject that move</h2>
+<p>Want to estimate <span class="math inline">\(N\)</span>, the number of animals in a population. Strategy: use a two-sample capture-recapture method.<sup>1</sup></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div id="fig-puffin" class="quarto-float quarto-figure quarto-figure-center" alt="Atlantic puffin.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-puffin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/Papageitaucher_Fratercula_arctica.jpg" style="width:100.0%" alt="Atlantic puffin.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-puffin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: R. Bartz: Puffin, <em>Fratercula arctica</em>, at Látrabjarg, Iceland (<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>).
+</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>Sampling 1: capture, mark, and release <span class="math inline">\(m\)</span> animals.</li>
+<li>Sampling 2: recapture <span class="math inline">\(K\)</span> animals and count marked animals (<span class="math inline">\(r\)</span> recaptures).</li>
+<li>Proportion of marked individuals recaptured equals proportion of total animals marked: <span class="math display">\[ \frac{r}{K} = \frac{m}{N} \,.\]</span></li>
+</ul>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Also known as the Lincoln–Peterson method.</p></li></ol></aside></section>
+<section id="capture-recapture-inference" class="slide level2 center">
+<h2>Capture-Recapture Inference</h2>
+
+<img data-src="images/schematic.png" style="width:100.0%" alt="Schematic of capture-recapture strategy." class="r-stretch quarto-figure-center" id="fig-schematic"><p class="caption">
+Figure&nbsp;5: Schematic of capture-recpature strategy: each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, <em>Ecology: the experimental analysis of distribution and abundance</em>, 6 ed., Pearson: London (2009).
+</p><div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Estimate for population size</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[\hat{N} = \frac{m \cdot K}{r}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="try-it" class="slide level2 smaller">
+<h2><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path></svg> Try it!</h2>
+<p>Work in small groups to apply the capture-recapture method to estimate <span class="math inline">\(N\)</span>.</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>“Capture” a number, <span class="math inline">\(m\)</span>, of puffins. Mark these puffins and “release” them back into the environment.</li>
+<li>Make sure the puffins mix in the environment!</li>
+<li>“Capture” number, <span class="math inline">\(K\)</span>, of puffins. Count the number of recaptures, <span class="math inline">\(r\)</span>.</li>
+<li>Use the formula to calculate <span class="math inline">\(\hat{N}\)</span>.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/puffin-vector-set-cute-cartoon-puffin-illustration_186686-802-2390816394.jpg" style="width:100.0%" alt="Cartoon puffins."></p>
+</div></div>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Estimate for population size</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[\hat{N} = \frac{m \cdot K}{r}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="assumptions" class="slide level2 center">
+<h2>Assumptions</h2>
+<p>What assumptions does capture-recapture make?</p>
+</section>
+<section id="capture-recapture-assumptions" class="slide level2">
+<h2>Capture-Recapture Assumptions</h2>
+<ul>
+<li>Animals are captured randomly in both period 1 and period 2 (no animal is easier/harder to catch).</li>
+<li>The environment is closed (no birth, death, or migration between research visits).<sup>1</sup></li>
+<li>Sample sizes are large enough (for assymptotically unbiased estimates).</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>This includes assuming that the mark is not a target for predators!</p></li></ol></aside></section>
+<section id="robustness" class="slide level2 center">
+<h2>Robustness</h2>
+<p>How good is the esimtate? How does it depend on <span class="math inline">\(m\)</span> and <span class="math inline">\(K\)</span>?</p>
+</section>
+<section id="simulations" class="slide level2">
+<h2>Simulations</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>#| standalone: true</span>
+<span id="cb1-2"><a></a>#| viewerHeight: 620</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>library(shiny)</span>
+<span id="cb1-5"><a></a>library(bslib)</span>
+<span id="cb1-6"><a></a>library(ggplot2)</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>ui &lt;- page_sidebar(</span>
+<span id="cb1-9"><a></a>  sidebar = sidebar(</span>
+<span id="cb1-10"><a></a>    title = "Parameters",</span>
+<span id="cb1-11"><a></a>    numericInput("N", "Population size N", value = 200, min = 10, step = 1),</span>
+<span id="cb1-12"><a></a>    sliderInput("m", "Marked in first sample m", min = 1, max = 200, value = 50, step = 1),</span>
+<span id="cb1-13"><a></a>    sliderInput("K", "Second sample size K", min = 1, max = 200, value = 60, step = 1),</span>
+<span id="cb1-14"><a></a>    checkboxInput("logx", "Log x-axis", value = FALSE),</span>
+<span id="cb1-15"><a></a>    selectInput("est", "Estimator", c("Lincoln-Peterson", "Chapman")),</span>
+<span id="cb1-16"><a></a>    numericInput("reps", "Replicates", value = 2000, min = 100, step = 100),</span>
+<span id="cb1-17"><a></a>    actionButton("resim", "Re-run simulation"),</span>
+<span id="cb1-18"><a></a>    helpText("Runs capture–recapture simulations replicate number of times."),</span>
+<span id="cb1-19"><a></a>  ),</span>
+<span id="cb1-20"><a></a>  navset_card_underline(</span>
+<span id="cb1-21"><a></a>    nav_panel("Histogram", plotOutput("hist")),</span>
+<span id="cb1-22"><a></a>    nav_panel("Summary", withMathJax(tableOutput("summary")))</span>
+<span id="cb1-23"><a></a>  )</span>
+<span id="cb1-24"><a></a>)</span>
+<span id="cb1-25"><a></a></span>
+<span id="cb1-26"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb1-27"><a></a>  # Keep sliders within bounds of N</span>
+<span id="cb1-28"><a></a>  observe({</span>
+<span id="cb1-29"><a></a>    N &lt;- as.integer(input$N)</span>
+<span id="cb1-30"><a></a>    if (isTRUE(N &gt; 1)) {</span>
+<span id="cb1-31"><a></a>      updateSliderInput(session, "m", max = N, value = min(isolate(input$m), N))</span>
+<span id="cb1-32"><a></a>      updateSliderInput(session, "K", max = N, value = min(isolate(input$K), N))</span>
+<span id="cb1-33"><a></a>    }</span>
+<span id="cb1-34"><a></a>  })</span>
+<span id="cb1-35"><a></a></span>
+<span id="cb1-36"><a></a>  nhat_rv &lt;- reactiveVal(NULL)</span>
+<span id="cb1-37"><a></a></span>
+<span id="cb1-38"><a></a>  recompute &lt;- function() {</span>
+<span id="cb1-39"><a></a>    N &lt;- as.integer(input$N)</span>
+<span id="cb1-40"><a></a>    m &lt;- as.integer(input$m)</span>
+<span id="cb1-41"><a></a>    K &lt;- as.integer(input$K)</span>
+<span id="cb1-42"><a></a>    if (!is.finite(N) || N &lt; 2) { nhat_rv(rep(NA_real_, 100)); return(invisible()) }</span>
+<span id="cb1-43"><a></a>    m &lt;- max(1L, min(m, N))</span>
+<span id="cb1-44"><a></a>    K &lt;- max(1L, min(K, N))</span>
+<span id="cb1-45"><a></a>    reps &lt;- as.integer(input$reps)</span>
+<span id="cb1-46"><a></a>    # rvec &lt;- integer(reps)</span>
+<span id="cb1-47"><a></a>    # for (i in seq_len(reps)) {</span>
+<span id="cb1-48"><a></a>    #   idx &lt;- sample.int(N, K, replace = FALSE)</span>
+<span id="cb1-49"><a></a>    #   rvec[i] &lt;- sum(idx &lt;= m)</span>
+<span id="cb1-50"><a></a>    # }</span>
+<span id="cb1-51"><a></a>    rvec &lt;- rhyper(nn = reps, m = m, n = N - m, k = K)</span>
+<span id="cb1-52"><a></a>    # nhat_rv(ifelse(rvec &gt; 0L, (m * K) / rvec, NA_real_))</span>
+<span id="cb1-53"><a></a>    nh &lt;- if (input$est == "Lincoln--Peterson") ifelse(rvec &gt; 0L, (m * K) / rvec, NA_real_)</span>
+<span id="cb1-54"><a></a>      else ((m + 1) * (K + 1)) / (rvec + 1) - 1</span>
+<span id="cb1-55"><a></a>    nhat_rv(nh)</span>
+<span id="cb1-56"><a></a>    invisible()</span>
+<span id="cb1-57"><a></a>  }</span>
+<span id="cb1-58"><a></a></span>
+<span id="cb1-59"><a></a>  observeEvent(input$resim, { recompute() })</span>
+<span id="cb1-60"><a></a>  observeEvent(list(input$N, input$m, input$K), { recompute() }, ignoreInit = TRUE)</span>
+<span id="cb1-61"><a></a>  # initial run</span>
+<span id="cb1-62"><a></a>  observe({ recompute() })</span>
+<span id="cb1-63"><a></a></span>
+<span id="cb1-64"><a></a>  output$hist &lt;- renderPlot({</span>
+<span id="cb1-65"><a></a>    nh &lt;- nhat_rv()</span>
+<span id="cb1-66"><a></a>    N &lt;- as.integer(input$N)</span>
+<span id="cb1-67"><a></a>    vals &lt;- nh[is.finite(nh)]</span>
+<span id="cb1-68"><a></a>    if (!length(vals)) {</span>
+<span id="cb1-69"><a></a>      plot.new(); title("No finite estimates to plot (all r = 0)")</span>
+<span id="cb1-70"><a></a>      return(invisible())</span>
+<span id="cb1-71"><a></a>    }</span>
+<span id="cb1-72"><a></a>    n &lt;- length(vals)</span>
+<span id="cb1-73"><a></a>    # Choose bins by a non data-driven rule of thumb (Rice rule) </span>
+<span id="cb1-74"><a></a>    nb &lt;- max(min(ceiling(2 * (n)^(1/3)), 200L), 5L) </span>
+<span id="cb1-75"><a></a></span>
+<span id="cb1-76"><a></a>    p &lt;- ggplot(data.frame(nhat = vals), aes(x = nhat)) +</span>
+<span id="cb1-77"><a></a>      geom_histogram(bins = nb, color = "white", fill = "#4365e2") +</span>
+<span id="cb1-78"><a></a>      scale_x_continuous(limits = c(0, 3 * N)) +</span>
+<span id="cb1-79"><a></a>      geom_vline(xintercept = N, linetype = "dashed", linewidth = 1, color = "#ff6264") +</span>
+<span id="cb1-80"><a></a>      labs(title = sprintf("Distribution of estimated population size (%d replicates)", n),</span>
+<span id="cb1-81"><a></a>           x = expression(hat(N)), y = "Count") +</span>
+<span id="cb1-82"><a></a>      theme_classic(base_size = 16)</span>
+<span id="cb1-83"><a></a>    if (input$logx) {</span>
+<span id="cb1-84"><a></a>      p &lt;- p + scale_x_log10()</span>
+<span id="cb1-85"><a></a>    } else {</span>
+<span id="cb1-86"><a></a>      p &lt;- p + coord_cartesian(xlim = c(0, 4 * N))</span>
+<span id="cb1-87"><a></a>    }</span>
+<span id="cb1-88"><a></a>    p</span>
+<span id="cb1-89"><a></a>  })</span>
+<span id="cb1-90"><a></a></span>
+<span id="cb1-91"><a></a>output$summary &lt;- renderTable({</span>
+<span id="cb1-92"><a></a>  nh &lt;- nhat_rv()</span>
+<span id="cb1-93"><a></a>  N  &lt;- as.integer(input$N)</span>
+<span id="cb1-94"><a></a></span>
+<span id="cb1-95"><a></a>  finite_mask &lt;- is.finite(nh)</span>
+<span id="cb1-96"><a></a>  x &lt;- nh[finite_mask]</span>
+<span id="cb1-97"><a></a>  n_eff &lt;- length(x)</span>
+<span id="cb1-98"><a></a>  na_rate &lt;- mean(is.na(nh))</span>
+<span id="cb1-99"><a></a></span>
+<span id="cb1-100"><a></a>  mean_x &lt;- if (n_eff) mean(x) else NA_real_</span>
+<span id="cb1-101"><a></a>  med_x  &lt;- if (n_eff) median(x) else NA_real_</span>
+<span id="cb1-102"><a></a>  sd_x   &lt;- if (n_eff) sd(x) else NA_real_</span>
+<span id="cb1-103"><a></a>  iqr_x  &lt;- if (n_eff) IQR(x) else NA_real_</span>
+<span id="cb1-104"><a></a>  min_x  &lt;- if (n_eff) min(x) else NA_real_</span>
+<span id="cb1-105"><a></a>  max_x  &lt;- if (n_eff) max(x) else NA_real_</span>
+<span id="cb1-106"><a></a></span>
+<span id="cb1-107"><a></a>  bias      &lt;- if (n_eff) mean_x - N else NA_real_</span>
+<span id="cb1-108"><a></a>  rel_bias  &lt;- if (n_eff &amp;&amp; N != 0) bias / N else NA_real_</span>
+<span id="cb1-109"><a></a>  rmse      &lt;- if (n_eff) sqrt(mean((x - N)^2)) else NA_real_</span>
+<span id="cb1-110"><a></a></span>
+<span id="cb1-111"><a></a>  nhat_sym &lt;- "N-hat"</span>
+<span id="cb1-112"><a></a></span>
+<span id="cb1-113"><a></a>  vals &lt;- c(</span>
+<span id="cb1-114"><a></a>    N,</span>
+<span id="cb1-115"><a></a>    mean_x,</span>
+<span id="cb1-116"><a></a>    med_x,</span>
+<span id="cb1-117"><a></a>    sd_x,</span>
+<span id="cb1-118"><a></a>    iqr_x,</span>
+<span id="cb1-119"><a></a>    min_x,</span>
+<span id="cb1-120"><a></a>    max_x,</span>
+<span id="cb1-121"><a></a>    bias,</span>
+<span id="cb1-122"><a></a>    rel_bias,</span>
+<span id="cb1-123"><a></a>    rmse,</span>
+<span id="cb1-124"><a></a>    na_rate</span>
+<span id="cb1-125"><a></a>  )</span>
+<span id="cb1-126"><a></a></span>
+<span id="cb1-127"><a></a>  nms &lt;- c(</span>
+<span id="cb1-128"><a></a>    "True N",</span>
+<span id="cb1-129"><a></a>    paste0("Mean( ", nhat_sym, " )"),</span>
+<span id="cb1-130"><a></a>    paste0("Median( ", nhat_sym, " )"),</span>
+<span id="cb1-131"><a></a>    paste0("SD( ", nhat_sym, " )"),</span>
+<span id="cb1-132"><a></a>    paste0("IQR( ", nhat_sym, " )"),</span>
+<span id="cb1-133"><a></a>    paste0("Min( ", nhat_sym, " )"),</span>
+<span id="cb1-134"><a></a>    paste0("Max( ", nhat_sym, " )"),</span>
+<span id="cb1-135"><a></a>    paste0("Bias = Mean( ", nhat_sym, " ) - N"),</span>
+<span id="cb1-136"><a></a>    paste0("Relative Bias = Bias / N"),</span>
+<span id="cb1-137"><a></a>    paste0("RMSE = sqrt( E[( ", nhat_sym, " - N )^2] )"),</span>
+<span id="cb1-138"><a></a>    "Mean(is.na(nh))"</span>
+<span id="cb1-139"><a></a>  )</span>
+<span id="cb1-140"><a></a></span>
+<span id="cb1-141"><a></a>  data.frame(Statistic = nms, Value = as.numeric(vals), check.names = FALSE)</span>
+<span id="cb1-142"><a></a>}, rownames = FALSE, colnames = TRUE)</span>
+<span id="cb1-143"><a></a>}</span>
+<span id="cb1-144"><a></a></span>
+<span id="cb1-145"><a></a>shinyApp(ui, server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section></section>
+<section>
+<section id="closing" class="title-slide slide level1 blue center">
+<h1>Closing</h1>
+
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>We described <strong>three methods for determining population size</strong>: census, single period sampling (random and stratefied sampling), and two-period sampling (capture-recapture).</li>
+<li>We undertook an activity to calculate a <strong>capture-recpature estimate</strong> for the population size.</li>
+<li>We explored <strong>statistical simulations</strong> to understand how that inference depends on parameters.</li>
+</ul>
+</section>
+<section id="mathematics-module-highlights" class="slide level2 green">
+<h2>Mathematics module highlights</h2>
+<h3 id="the-dundee-difference">The Dundee Difference</h3>
+<ul>
+<li><strong>Experiential learning</strong> activities within modules (Botanics workshop, programming, report writing) and module choices (work placement and project modules).</li>
+<li>Focus on <strong>process, context, and communicating outcome</strong> - following best practices in mathematical modelling and statistics education.</li>
+<li>Inclusion of real data sets, considering context through the lens of <strong>social justice</strong>.</li>
+</ul>
+</section>
+<section id="thanks-for-listening" class="slide level2 mySegue center">
+<h2>Thanks for listening</h2>
+<p>Enjoy the rest of your day at the University of Dundee!</p>
+</section>
+<section id="section-1" class="slide level2 center">
+<h2></h2>
+
+
+
+<aside><div>
+<p>Last updated: 2025-09-23.</p>
+<p>If you have questions about this content, please contact <br> <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 128l-177.6 0c1 5.2 1.6 10.5 1.6 16l0 16 32 0 144 0c8.8 0 16-7.2 16-16s-7.2-16-16-16zM224 144c0-17.7-14.3-32-32-32c0 0 0 0 0 0l-24 0c-66.3 0-120 53.7-120 120l0 48c0 52.5 33.7 97.1 80.7 113.4c-.5-3.1-.7-6.2-.7-9.4c0-20 9.2-37.9 23.6-49.7c-4.9-9-7.6-19.4-7.6-30.3c0-15.1 5.3-29 14-40c-8.8-11-14-24.9-14-40l0-40c0-13.3 10.7-24 24-24s24 10.7 24 24l0 40c0 8.8 7.2 16 16 16s16-7.2 16-16l0-40 0-40zM192 64s0 0 0 0c18 0 34.6 6 48 16l208 0c35.3 0 64 28.7 64 64s-28.7 64-64 64l-82 0c1.3 5.1 2 10.5 2 16c0 25.3-14.7 47.2-36 57.6c2.6 7 4 14.5 4 22.4c0 20-9.2 37.9-23.6 49.7c4.9 9 7.6 19.4 7.6 30.3c0 35.3-28.7 64-64 64l-64 0-24 0C75.2 448 0 372.8 0 280l0-48C0 139.2 75.2 64 168 64l24 0zm64 336c8.8 0 16-7.2 16-16s-7.2-16-16-16l-48 0-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l64 0zm16-176c0 5.5-.7 10.9-2 16l2 0 32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0 0 16zm-24 64l-40 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 16 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-24 0z"></path></svg> Dr Eric Hall (<a href="mailto:ehall001@dundee.ac.uk" class="email">ehall001@dundee.ac.uk</a>).</p>
+</div></aside></section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="resources/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-text-resizer/revealjs-text-resizer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealTextResizer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
