@@ -2,127 +2,120 @@
   {
     "objectID": "presentation.html#question",
     "href": "presentation.html#question",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Question:",
     "text": "Question:\nHow do we determine the size of a population?"
   },
   {
     "objectID": "presentation.html#census",
     "href": "presentation.html#census",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Census",
     "text": "Census\n\n\n\nA census counts every member of population.\nFor wildlife, all members must be present simultaneously in terrain where concealment is impossible (think: barrenground caribou on open tundra).\nCounting every member of a population is not always possible!\n\n\n\n\n\n\n\n\nFigure 1: BBC News, Census: Scotland’s population grew to record high (2023-09-14)."
   },
   {
     "objectID": "presentation.html#population-estimation",
     "href": "presentation.html#population-estimation",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Population estimation",
     "text": "Population estimation\nIn majority of cases, the size of a plant or animal population must be estimated from a sample. We infer the population size using statistics."
   },
   {
     "objectID": "presentation.html#what-is-statistics",
     "href": "presentation.html#what-is-statistics",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "What is Statistics?",
     "text": "What is Statistics?\nStatistics is the science of understanding uncertainty and natural variation.\n\n\n\n\n\nStatistics is a collection of procedures and principles for gaining and analyzing information to educate people and help them make better decisions when faced with uncertainty. (Utts, 2014)"
   },
   {
-    "objectID": "presentation.html#statistical-inference",
-    "href": "presentation.html#statistical-inference",
-    "title": "Wild Stats for Population Ecology",
-    "section": "Statistical inference",
-    "text": "Statistical inference\n\nOften we are interested in estimating a characteristic of a population based on a small number of samples.\nWhen we estimate a population characteristic using an inferential procedure, we can sometimes make errors!\n\n\n\n\n\n\n\n\n\n%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '28px'}}}%%\n\nflowchart LR\n  A((\"Data\")) & B((\"Models\")) --&gt; C((\"Inference\")) ==&gt; D((\"Population\"))\n\n\n\n\nFigure 2: We use data and (statistical) models to make inferences about a population."
-  },
-  {
     "objectID": "presentation.html#sampling-subjects-that-sit-still",
     "href": "presentation.html#sampling-subjects-that-sit-still",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Sampling subjects that ‘sit still’",
-    "text": "Sampling subjects that ‘sit still’\n\n\nFigure 3: BBC Bitesize, Collecting data - quadrats.\n\nTypes of samplingExample\n\n\n\nWhen distribution is homogeneous: random sampling without replacement.\nWhen distribution is inhomogeneous: stratefied sampling along “transects”.\n\n\n\n\n\n\nEstimate the number of grass plants found in the whole area in Figure 3\n\n\n\\text{Total grass plants found in sample} \\times \\frac{\\text{Total area}\\;(m^2)}{\\text{Total area sampled}\\;(m^2)}"
+    "text": "Sampling subjects that ‘sit still’\n\n\nFigure 2: BBC Bitesize, Collecting data - quadrats.\n\nTypes of samplingExample\n\n\n\nWhen distribution is homogeneous: random sampling without replacement.\nWhen distribution is inhomogeneous: stratefied sampling along “transects”.\n\n\n\n\n\n\nEstimate the number of grass plants found in the whole area in Figure 2\n\n\n\\text{Total grass plants found in sample} \\times \\frac{\\text{Total area}\\;(m^2)}{\\text{Total area sampled}\\;(m^2)}"
   },
   {
     "objectID": "presentation.html#discussion",
     "href": "presentation.html#discussion",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Discussion",
     "text": "Discussion\nBut what to do if subjects move?"
   },
   {
     "objectID": "presentation.html#sampling-subject-that-move",
     "href": "presentation.html#sampling-subject-that-move",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Sampling subject that move",
-    "text": "Sampling subject that move\nWant to estimate N, the number of animals in a population. Strategy: use a two-sample capture-recapture method.1\n\n\n\n\n\n\n\n\nFigure 4: R. Bartz: Puffin, Fratercula arctica, at Látrabjarg, Iceland (CC BY-SA 3.0).\n\n\n\n\n\nSampling 1: capture, mark, and release m animals.\nSampling 2: recapture K animals and count marked animals (r recaptures).\nProportion of marked individuals recaptured equals proportion of total animals marked:  \\frac{r}{K} = \\frac{m}{N} \\,.\n\n\nAlso known as the Lincoln–Peterson method."
+    "text": "Sampling subject that move\nWant to estimate N, the number of animals in a population. Strategy: use a two-sample capture-recapture method.1\n\n\n\n\n\n\n\n\nFigure 3: R. Bartz: Puffin, Fratercula arctica, at Látrabjarg, Iceland (CC BY-SA 3.0).\n\n\n\n\n\nSampling 1: capture, mark, and release m animals.\nSampling 2: recapture K animals and count marked animals (r recaptures).\nProportion of marked individuals recaptured equals proportion of total animals marked:  \\frac{r}{K} = \\frac{m}{N} \\,.\n\n\nAlso known as the Lincoln–Peterson method."
   },
   {
     "objectID": "presentation.html#capture-recapture-inference",
     "href": "presentation.html#capture-recapture-inference",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Capture-Recapture Inference",
-    "text": "Capture-Recapture Inference\n\n\nFigure 5: Schematic of a capture-recpature strategy. Each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, Ecology: the experimental analysis of distribution and abundance, 6 ed., Pearson: London (2009).\n\n\n\nEstimate for population size\n\n\n\\hat{N} = \\frac{m \\cdot K}{r}"
+    "text": "Capture-Recapture Inference\n\n\nFigure 4: Schematic of a capture-recpature strategy. Each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, Ecology: the experimental analysis of distribution and abundance, 6 ed., Pearson: London (2009).\n\n\n\nEstimate for population size\n\n\n\\hat{N} = \\frac{m \\cdot K}{r}"
   },
   {
     "objectID": "presentation.html#try-it",
     "href": "presentation.html#try-it",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": " Try it!",
     "text": "Try it!\nWork in small groups to apply the capture-recapture method to estimate N.\n\n\n\n“Capture” a number, m, of puffins. Mark these puffins and “release” them back into the environment.\nMake sure the puffins mix in the environment!\n“Capture” number, K, of puffins. Count the number of recaptures, r.\nUse the formula to calculate \\hat{N}.\n\n\n\n\n\n\n\nEstimate for population size\n\n\n\\hat{N} = \\frac{m \\cdot K}{r}"
   },
   {
     "objectID": "presentation.html#assumptions",
     "href": "presentation.html#assumptions",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Assumptions",
     "text": "Assumptions\nWhat assumptions does capture-recapture make?"
   },
   {
     "objectID": "presentation.html#capture-recapture-assumptions",
     "href": "presentation.html#capture-recapture-assumptions",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Capture-Recapture Assumptions",
     "text": "Capture-Recapture Assumptions\n\nAnimals are captured randomly in both period 1 and period 2 (no animal is easier/harder to catch).\nThe environment is closed (no birth, death, or migration between research visits).1\nSample sizes are large enough (for assymptotically unbiased estimates).\n\nThis includes assuming that the mark is not a target for predators!"
   },
   {
     "objectID": "presentation.html#robustness",
     "href": "presentation.html#robustness",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Robustness",
     "text": "Robustness\nHow good is the esimtate? How does it depend on m and K?"
   },
   {
     "objectID": "presentation.html#statistics-by-simulations",
     "href": "presentation.html#statistics-by-simulations",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Statistics by simulations",
     "text": "Statistics by simulations\n#| standalone: true\n#| viewerHeight: 620\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(ggplot2)\n\nui &lt;- page_sidebar(\n  sidebar = sidebar(\n    title = \"Parameters\",\n    numericInput(\"N\", \"Population size N\", value = 200, min = 10, step = 1),\n    sliderInput(\"m\", \"Marked in first sample m\", min = 1, max = 200, value = 50, step = 1),\n    sliderInput(\"K\", \"Second sample size K\", min = 1, max = 200, value = 60, step = 1),\n    checkboxInput(\"logx\", \"Log x-axis\", value = FALSE),\n    selectInput(\"est\", \"Estimator\", c(\"Lincoln–Petersen\" = \"LP\", \"Chapman\" = \"CH\")),\n    numericInput(\"reps\", \"Replicates\", value = 1000, min = 100, step = 100),\n    actionButton(\"resim\", \"Re-run simulation\"),\n    helpText(\"Runs capture–recapture simulations replicate number of times.\")\n  ),\n  navset_card_underline(\n    nav_panel(\"Histogram\", plotOutput(\"hist\")),\n    nav_panel(\"Summary\", tableOutput(\"summary\"))\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  # Keep sliders within bounds of N\n  observe({\n    N &lt;- as.integer(input$N)\n    if (isTRUE(N &gt; 1)) {\n      updateSliderInput(session, \"m\", max = N, value = min(isolate(input$m), N))\n      updateSliderInput(session, \"K\", max = N, value = min(isolate(input$K), N))\n    }\n  })\n\n  nhat_rv &lt;- reactiveVal(NULL)\n\n  recompute &lt;- function() {\n    N &lt;- as.integer(input$N)\n    m &lt;- as.integer(input$m)\n    K &lt;- as.integer(input$K)\n    if (!is.finite(N) || N &lt; 2) { nhat_rv(rep(NA_real_, 100)); return(invisible()) }\n    m &lt;- max(1L, min(m, N))\n    K &lt;- max(1L, min(K, N))\n    reps &lt;- as.integer(input$reps)\n    # rvec &lt;- integer(reps)\n    # for (i in seq_len(reps)) {\n    #   idx &lt;- sample.int(N, K, replace = FALSE)\n    #   rvec[i] &lt;- sum(idx &lt;= m)\n    # }\n    rvec &lt;- rhyper(nn = reps, m = m, n = N - m, k = K)\n    nh &lt;- if (identical(input$est, \"LP\")) {\n      ifelse(rvec &gt; 0L, (m * K) / rvec, NA_real_)\n    } else {\n      ((m + 1) * (K + 1)) / (rvec + 1) - 1\n    }\n    nhat_rv(nh)\n    invisible()\n  }\n\n  observeEvent(input$resim, { recompute() })\n  observeEvent(list(input$N, input$m, input$K), { recompute() }, ignoreInit = TRUE)\n  # initial run\n  observe({ recompute() })\n\n  output$hist &lt;- renderPlot({\n    nh &lt;- nhat_rv()\n    N &lt;- as.integer(input$N)\n    vals &lt;- nh[is.finite(nh)]\n    if (!length(vals)) {\n      plot.new(); title(\"No finite estimates to plot (all r = 0)\")\n      return(invisible())\n    }\n    n &lt;- length(vals)\n    # Choose bins by a non data-driven rule of thumb (Rice rule) \n    nb &lt;- max(min(ceiling(2 * (n)^(1/3)), 200L), 5L) \n\n    p &lt;- ggplot(data.frame(nhat = vals), aes(x = nhat)) +\n      geom_histogram(bins = nb, color = \"white\", fill = \"#4365e2\") +\n      scale_x_continuous(limits = c(0, 3 * N)) +\n      geom_vline(xintercept = N, linetype = \"dashed\", linewidth = 1, color = \"#ff6264\") +\n      labs(title = sprintf(\"Distribution of estimated population size (%d replicates)\", n),\n           x = expression(hat(N)), y = \"Count\") +\n      theme_classic(base_size = 16)\n    if (input$logx) {\n      p &lt;- p + scale_x_log10()\n    } else {\n      p &lt;- p + coord_cartesian(xlim = c(0, 4 * N))\n    }\n    p\n  })\n\noutput$summary &lt;- renderTable({\n  nh &lt;- nhat_rv()\n  N  &lt;- as.integer(input$N)\n\n  finite_mask &lt;- is.finite(nh)\n  x &lt;- nh[finite_mask]\n  n_eff &lt;- length(x)\n  na_rate &lt;- mean(is.na(nh))\n\n  mean_x &lt;- if (n_eff) mean(x) else NA_real_\n  med_x  &lt;- if (n_eff) median(x) else NA_real_\n  sd_x   &lt;- if (n_eff) sd(x) else NA_real_\n  iqr_x  &lt;- if (n_eff) IQR(x) else NA_real_\n  min_x  &lt;- if (n_eff) min(x) else NA_real_\n  max_x  &lt;- if (n_eff) max(x) else NA_real_\n\n  bias      &lt;- if (n_eff) mean_x - N else NA_real_\n  rel_bias  &lt;- if (n_eff && N != 0) bias / N else NA_real_\n  rmse      &lt;- if (n_eff) sqrt(mean((x - N)^2)) else NA_real_\n\n  nhat_sym &lt;- \"N-hat\"  # Unicode N\\u0302\n\n  vals &lt;- c(\n    N,\n    mean_x,\n    med_x,\n    sd_x,\n    iqr_x,\n    min_x,\n    max_x,\n    bias,\n    rel_bias,\n    rmse,\n    na_rate\n  )\n\n  nms &lt;- c(\n    \"True N\",\n    paste0(\"Mean( \", nhat_sym, \" )\"),\n    paste0(\"Median( \", nhat_sym, \" )\"),\n    paste0(\"SD( \", nhat_sym, \" )\"),\n    paste0(\"IQR( \", nhat_sym, \" )\"),\n    paste0(\"Min( \", nhat_sym, \" )\"),\n    paste0(\"Max( \", nhat_sym, \" )\"),\n    paste0(\"Bias = Mean( \", nhat_sym, \" ) - N\"),\n    paste0(\"Relative Bias = Bias / N\"),\n    paste0(\"RMSE = sqrt( E[( \", nhat_sym, \" - N )^2] )\"),\n    \"Mean( is.na(nh) )\"\n  )\n\n  data.frame(Statistic = nms, Value = as.numeric(vals), check.names = FALSE)\n}, rownames = FALSE, colnames = TRUE)\n}\n\nshinyApp(ui, server)"
   },
   {
     "objectID": "presentation.html#recap",
     "href": "presentation.html#recap",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Recap",
     "text": "Recap\n\nWe described three methods for determining population size: census, single period sampling (random and stratefied sampling), and two-period sampling (capture-recapture).\nWe undertook an activity to calculate a capture-recpature estimate for the population size.\nWe explored statistical simulations to understand how that inference depends on parameters."
   },
   {
     "objectID": "presentation.html#mathematics-module-highlights",
     "href": "presentation.html#mathematics-module-highlights",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Mathematics module highlights",
     "text": "Mathematics module highlights\nThe Dundee Difference\n\nExperiential learning activities within modules (Botanics workshop, programming, report writing) and module choices (work placement and project modules).\nFocus on process, context, and communicating outcome - following best practices in mathematical modelling and statistics education.\nInclusion of real data sets, considering context through the lens of social justice."
   },
   {
     "objectID": "presentation.html#thanks-for-listening",
     "href": "presentation.html#thanks-for-listening",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "Thanks for listening",
     "text": "Thanks for listening\nEnjoy the rest of your day at the University of Dundee!"
   },
   {
     "objectID": "presentation.html#section",
     "href": "presentation.html#section",
-    "title": "Wild Stats for Population Ecology",
+    "title": "Open Day with Mathematics",
     "section": "",
-    "text": "Last updated: 2025-09-23.\nIf you have questions about this content, please contact   Dr Eric Hall (ehall001@dundee.ac.uk)."
+    "text": "Last updated: 2025-09-25.\nIf you have questions about this content, please contact   Dr Eric Hall (ehall001@dundee.ac.uk)."
   }
 ]

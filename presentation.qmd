@@ -1,9 +1,10 @@
 ---
-title: "Wild Stats for Population Ecology"
-subtitle: "or: How to Count What Won't Sit Still"
+title: "Open Day with Mathematics"
 institute: "University of Dundee"
 format: revealjs
 ---
+<!-- title: "Wild Stats for Population Ecology"
+subtitle: "or: How to Count What Won't Sit Still" -->
 
 ```{r}
 #| echo: false
@@ -41,7 +42,7 @@ BBC News, _Census: Scotland's population grew to record high_ (2023-09-14).
 ##  Population estimation {.center}
 In majority of cases, the size of a plant or animal population must be estimated from a sample. We _infer_ the population size using statistics. 
 
-# Aside {.aside}
+<!-- # Aside {.aside} -->
 
 ## What is _Statistics_? {.mySegue .center .aside}
 
@@ -57,7 +58,8 @@ Statistics is the science of understanding **uncertainty** and **natural variati
 :::
 :::
 
-## Statistical inference {.aside}
+
+<!-- ## Statistical inference {.aside}
 
 - Often we are interested in estimating a characteristic of a population based on a small number of samples. 
 - When we estimate a population characteristic using an inferential procedure, we can sometimes make errors!
@@ -72,7 +74,7 @@ Statistics is the science of understanding **uncertainty** and **natural variati
 flowchart LR
   A(("Data")) & B(("Models")) --> C(("Inference")) ==> D(("Population"))
 ```
-:::
+::: -->
 
 # Estimating populations {.blue}
 

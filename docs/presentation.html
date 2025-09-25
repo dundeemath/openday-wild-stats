@@ -14,7 +14,7 @@
 <link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
-  <title>Experiential Learning in Mathematics – Wild Stats for Population Ecology</title>
+  <title>Experiential Learning in Mathematics – Open Day with Mathematics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -219,10 +219,14 @@
 <section id="title-slide" class="title-page center">
   <img class="logo" src="resources/rev_logo.png" alt="University of Dundee Logo">
   <br>
-  <h1 class="title">Wild Stats for Population Ecology</h1>
-  <p class="subtitle">or: How to Count What Won’t Sit Still</p>
+  <h1 class="title">Open Day with Mathematics</h1>
   <br>
   <p class="institute">University of Dundee</p>
+</section>
+<section class="slide level2">
+
+<!-- title: "Wild Stats for Population Ecology"
+subtitle: "or: How to Count What Won't Sit Still" -->
 </section>
 <section>
 <section id="the-problem" class="title-slide slide level1 blue center">
@@ -258,11 +262,7 @@ Figure&nbsp;1: BBC News, <em>Census: Scotland’s population grew to record high
 <section id="population-estimation" class="slide level2 center">
 <h2>Population estimation</h2>
 <p>In majority of cases, the size of a plant or animal population must be estimated from a sample. We <em>infer</em> the population size using statistics.</p>
-</section></section>
-<section>
-<section id="aside" class="title-slide slide level1 aside center">
-<h1>Aside</h1>
-
+<!-- # Aside {.aside} -->
 </section>
 <section id="what-is-statistics" class="slide level2 mySegue center aside">
 <h2>What is <em>Statistics</em>?</h2>
@@ -275,37 +275,34 @@ Figure&nbsp;1: BBC News, <em>Census: Scotland’s population grew to record high
 <p>Statistics is a collection of procedures and principles for gaining and analyzing information to educate people and help them make better decisions when faced with uncertainty. (Utts, 2014)</p>
 </blockquote>
 </div></div>
-</section>
-<section id="statistical-inference" class="slide level2 aside">
-<h2>Statistical inference</h2>
-<ul>
-<li>Often we are interested in estimating a characteristic of a population based on a small number of samples.</li>
-<li>When we estimate a population characteristic using an inferential procedure, we can sometimes make errors!</li>
-</ul>
-<div class="quarto-layout-panel" data-layout="[[100]]">
-<div class="quarto-layout-row">
-<div class="cell quarto-layout-cell" data-reveal="true" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="cell-output-display">
-<div id="fig-flowchart" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-flowchart">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '28px'}}}%%
+<!-- ## Statistical inference {.aside}
+
+- Often we are interested in estimating a characteristic of a population based on a small number of samples. 
+- When we estimate a population characteristic using an inferential procedure, we can sometimes make errors!
+
+::: {layout="[[100]]"}
+
+::::::{.cell reveal=true layout-align="center"}
+
+:::::{.cell-output-display}
+
+::::{#fig-flowchart}
+
+:::{}
+
+<pre class="mermaid mermaid-js" data-label="fig-flowchart">%%{init: {&#39;theme&#39;: &#39;base&#39;, &#39;themeVariables&#39;: { &#39;fontSize&#39;: &#39;28px&#39;}}}%%
 
 flowchart LR
-  A(("Data")) &amp; B(("Models")) --&gt; C(("Inference")) ==&gt; D(("Population"))
+  A((&quot;Data&quot;)) &amp; B((&quot;Models&quot;)) --&gt; C((&quot;Inference&quot;)) ==&gt; D((&quot;Population&quot;))
 </pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: We use data and (statistical) models to make inferences about a population.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
+:::
+
+
+We use data and (statistical) models to make inferences about a population.
+::::
+:::::
+::::::
+::: -->
 </section></section>
 <section>
 <section id="estimating-populations" class="title-slide slide level1 blue center">
@@ -316,7 +313,7 @@ Figure&nbsp;2: We use data and (statistical) models to make inferences about a p
 <h2>Sampling subjects that ‘sit still’</h2>
 
 <img data-src="images/quadrats.png" style="width:80.0%" alt="Quadrats in action." class="r-stretch quarto-figure-center" id="fig-quadrats"><p class="caption">
-Figure&nbsp;3: BBC Bitesize, <em>Collecting data - quadrats</em>.
+Figure&nbsp;2: BBC Bitesize, <em>Collecting data - quadrats</em>.
 </p><div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Types of sampling</a></li><li><a href="#tabset-1-2">Example</a></li></ul>
 <div class="tab-content">
@@ -330,7 +327,7 @@ Figure&nbsp;3: BBC Bitesize, <em>Collecting data - quadrats</em>.
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Estimate the number of grass plants found in the whole area in <a href="#/fig-quadrats" class="quarto-xref">Figure&nbsp;3</a></strong></p>
+<p><strong>Estimate the number of grass plants found in the whole area in <a href="#/fig-quadrats" class="quarto-xref">Figure&nbsp;2</a></strong></p>
 </div>
 <div class="callout-content">
 <p><span class="math display">\text{Total grass plants found in sample} \times \frac{\text{Total area}\;(m^2)}{\text{Total area sampled}\;(m^2)}</span></p>
@@ -356,7 +353,7 @@ Figure&nbsp;3: BBC Bitesize, <em>Collecting data - quadrats</em>.
 <img data-src="images/Papageitaucher_Fratercula_arctica.jpg" style="width:100.0%" alt="Atlantic puffin.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-puffin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: R. Bartz: Puffin, <em>Fratercula arctica</em>, at Látrabjarg, Iceland (<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>).
+Figure&nbsp;3: R. Bartz: Puffin, <em>Fratercula arctica</em>, at Látrabjarg, Iceland (<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>).
 </figcaption>
 </figure>
 </div>
@@ -372,7 +369,7 @@ Figure&nbsp;4: R. Bartz: Puffin, <em>Fratercula arctica</em>, at Látrabjarg, Ic
 <h2>Capture-Recapture Inference</h2>
 
 <img data-src="images/schematic.png" style="width:100.0%" alt="Schematic of capture-recapture strategy." class="r-stretch quarto-figure-center" id="fig-schematic"><p class="caption">
-Figure&nbsp;5: Schematic of a capture-recpature strategy. Each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, <em>Ecology: the experimental analysis of distribution and abundance</em>, 6 ed., Pearson: London (2009).
+Figure&nbsp;4: Schematic of a capture-recpature strategy. Each square represents one individual, each light blue square reprents a marked individual, and dark blue squares represent recaptures; adapted from C. Krebs, <em>Ecology: the experimental analysis of distribution and abundance</em>, 6 ed., Pearson: London (2009).
 </p><div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -607,7 +604,7 @@ Figure&nbsp;5: Schematic of a capture-recpature strategy. Each square represents
 
 
 <aside><div>
-<p>Last updated: 2025-09-23.</p>
+<p>Last updated: 2025-09-25.</p>
 <p>If you have questions about this content, please contact <br> <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 128l-177.6 0c1 5.2 1.6 10.5 1.6 16l0 16 32 0 144 0c8.8 0 16-7.2 16-16s-7.2-16-16-16zM224 144c0-17.7-14.3-32-32-32c0 0 0 0 0 0l-24 0c-66.3 0-120 53.7-120 120l0 48c0 52.5 33.7 97.1 80.7 113.4c-.5-3.1-.7-6.2-.7-9.4c0-20 9.2-37.9 23.6-49.7c-4.9-9-7.6-19.4-7.6-30.3c0-15.1 5.3-29 14-40c-8.8-11-14-24.9-14-40l0-40c0-13.3 10.7-24 24-24s24 10.7 24 24l0 40c0 8.8 7.2 16 16 16s16-7.2 16-16l0-40 0-40zM192 64s0 0 0 0c18 0 34.6 6 48 16l208 0c35.3 0 64 28.7 64 64s-28.7 64-64 64l-82 0c1.3 5.1 2 10.5 2 16c0 25.3-14.7 47.2-36 57.6c2.6 7 4 14.5 4 22.4c0 20-9.2 37.9-23.6 49.7c4.9 9 7.6 19.4 7.6 30.3c0 35.3-28.7 64-64 64l-64 0-24 0C75.2 448 0 372.8 0 280l0-48C0 139.2 75.2 64 168 64l24 0zm64 336c8.8 0 16-7.2 16-16s-7.2-16-16-16l-48 0-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l64 0zm16-176c0 5.5-.7 10.9-2 16l2 0 32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0 0 16zm-24 64l-40 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 16 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-24 0z"></path></svg> Dr Eric Hall (<a href="mailto:ehall001@dundee.ac.uk" class="email">ehall001@dundee.ac.uk</a>).</p>
 </div></aside></section></section>
 
